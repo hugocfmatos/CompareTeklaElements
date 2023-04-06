@@ -12,3 +12,5 @@ The comparison process is carried out in three simple steps:
     Read the second set of data: The application reads the data from the second set of Tekla models and stores it in another datatable.
 
     Compare the data: The application compares the two datatables and generates a report in a data grid. The report is then exported to a .xlsx file.
+
+An example of 2 sets of data can be found on the project's root directory.
