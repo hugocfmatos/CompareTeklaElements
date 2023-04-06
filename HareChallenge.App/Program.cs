@@ -30,18 +30,15 @@ class Program
 
         foreach(DataRow row2 in memberList2.Rows)
         {
-            foreach(Member member1 in members)
+            Member member1 = members.SingleOrDefault(q => HasSameCoordinates(q, row2));
+
+            if (member1 != null)
             {
-                if (HasSameCoordinates(member1, row2))
-                {
-                    CompleteMember(member1, row2);
-                    goto OuterLoop;
-                }
+                CompleteMember(member1, row2);
+                continue;
             }
 
-        members.Add(BuildMember2(row2));
-        OuterLoop:
-            continue;
+            members.Add(BuildMember2(row2));
         }
 
         foreach(Member member in members)
